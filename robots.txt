@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /contact/
+Disallow: /oauth/
+
+Sitemap: https://www.tuyamedical.com/sitemap.xml
