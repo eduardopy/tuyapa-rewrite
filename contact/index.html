@@ -1,18 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact | Tuya PA Medical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integration Contact — TUYA PA</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .doc { max-width: 720px; margin: 0 auto; padding: 3rem var(--pad); }
+    .doc h2 { margin-top: 2rem; font-size: 1.2rem; }
+  </style>
 </head>
-<body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 0 16px;">
-  <h1>Contact</h1>
-  <p>This page is provided for integration support.</p>
+<body>
+
+<header class="site-header">
+  <div class="container row">
+    <a class="brand" href="/" aria-label="TUYA PA home">
+      <img src="/assets/img/logo.png" alt="">
+      <span>TUYA PA</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+      <a class="nav-cta" href="https://login.patientfusion.com/" target="_blank" rel="noopener">Patient Portal</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <h1>Integration Contact</h1>
+  <p class="lead">This page exists for third-party integration registration. If you are a patient, please visit our <a href="/">main site</a> or call <a href="tel:+17725890300">(772) 589-0300</a>.</p>
 
   <h2>Integration Support</h2>
-  <p>Email: <strong>guillermorelpy@gmail.com</strong></p>
-  <p>Phone: <strong></strong></p>
+  <p>Email: <a href="mailto:guillermorelpy@gmail.com">guillermorelpy@gmail.com</a></p>
 
-  <p><a href="/privacy/">Privacy Policy</a></p>
+  <h2>Privacy</h2>
+  <p>See our <a href="/privacy/">Privacy Policy</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> TUYA PA. All rights reserved.</span>
+      <span><a href="/">Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

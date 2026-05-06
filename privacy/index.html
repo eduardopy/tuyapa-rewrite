@@ -1,46 +1,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy | Tuya PA Medical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — TUYA PA</title>
+  <meta name="description" content="Privacy policy for TUYA PA, including information about data collection, use, and sharing.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .doc { max-width: 760px; margin: 0 auto; padding: 3rem var(--pad); }
+    .doc h1 { margin-bottom: 1.5rem; }
+    .doc h2 { margin-top: 2rem; font-size: 1.25rem; }
+    .doc ul { padding-left: 1.25rem; color: var(--ink-soft); }
+    .doc .meta { color: var(--ink-soft); font-size: .95rem; margin-bottom: 2rem; }
+  </style>
 </head>
-<body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; max-width: 800px; margin: 40px auto; padding: 0 16px;">
-  <h1>Privacy Policy</h1>
-  <p><strong>Effective date:</strong> 2026-02-23</p>
+<body>
 
-  <p>
-    This website page is provided for third-party integration registration purposes.
-    Tuya PA Medical (“we”) may process health information only as permitted by applicable law
-    and as necessary to provide healthcare services and related operations.
-  </p>
+<header class="site-header">
+  <div class="container row">
+    <a class="brand" href="/" aria-label="TUYA PA home">
+      <img src="/assets/img/logo.png" alt="">
+      <span>TUYA PA</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#doctors">Doctors</a>
+      <a href="/#locations">Locations</a>
+      <a href="/#contact">Contact</a>
+      <a class="lang-toggle" href="/es/" hreflang="es">ES</a>
+      <a class="nav-cta" href="https://login.patientfusion.com/" target="_blank" rel="noopener">Patient Portal</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <h1>Privacy Policy</h1>
+  <p class="meta"><strong>Effective:</strong> February 23, 2026</p>
+
+  <p>This page describes how TUYA PA ("we," "us") handles information collected through this website. It does not describe our handling of protected health information (PHI) under HIPAA — that is governed by our Notice of Privacy Practices, available at our offices.</p>
 
   <h2>Information we collect</h2>
   <ul>
-    <li>Website contact messages, if you submit them (optional).</li>
-    <li>Integration metadata required to connect authorized systems (e.g., public keys for JWKS).</li>
+    <li>Messages you choose to send us through the contact form (your name, email, and the contents of your message).</li>
+    <li>Integration metadata required to connect authorized services (for example, public keys exposed at <code>/.well-known/jwks.json</code>).</li>
+    <li>Standard web server logs (IP address, browser type, pages visited) retained for security and troubleshooting.</li>
   </ul>
 
   <h2>How we use information</h2>
   <ul>
-    <li>To operate and secure integrations with authorized services.</li>
-    <li>To support care operations and analytics for our patient population, as allowed by law and contract.</li>
+    <li>To respond to inquiries you send us through the contact form.</li>
+    <li>To operate and secure integrations with authorized services such as the Patient Portal.</li>
+    <li>To support care operations for our patient population, as permitted by applicable law and contracts.</li>
   </ul>
 
   <h2>Sharing</h2>
-  <p>
-    We do not sell personal information. We share information only with authorized partners and vendors
-    as needed to provide services, and as required by law.
-  </p>
+  <p>We do not sell personal information. We share information only with authorized partners and vendors as needed to provide services, and as required by law.</p>
 
   <h2>Security</h2>
-  <p>
-    We take reasonable measures to protect data. No method of transmission or storage is 100% secure.
-  </p>
+  <p>We take reasonable administrative and technical measures to protect the information we hold. No method of internet transmission or electronic storage is fully secure; please do not include sensitive medical information in website forms or emails. For secure communication with your provider, use the Patient Portal.</p>
+
+  <h2>Children</h2>
+  <p>This website is not directed to children under 13, and we do not knowingly collect personal information from children through this website.</p>
 
   <h2>Contact</h2>
-  <p>
-    For questions about this policy, contact: <a href="/contact/">Tuya PA Medical Contact</a>
-  </p>
+  <p>For questions about this policy, please <a href="/#contact">contact us</a> or call <a href="tel:+17725890300">(772) 589-0300</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> TUYA PA. All rights reserved.</span>
+      <span><a href="/">Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
