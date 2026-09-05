@@ -1,65 +1,55 @@
-# TUYA PA — site-reimagine
+# TUYA PA — codex-reimagined
 
-Experimental rewrite of tuyamedical.com, designed from scratch rather than restyled from the BootstrapMade template.
+A new version of `site-reimagine` for the existing static TUYA PA website.
+No framework, package installation, or build step is required.
 
-## Design intent
+## Preview
 
-- **Audience first**: 65+ patients on phones with weak vision and arthritic fingers; adult children doing first-time research on desktop.
-- **Phone is the hero**, not a stock photo. One huge, tappable number.
-- **Decision panel** ("What brings you here?") replaces a generic marketing hero.
-- **Locations as a table**, not three identical cards — three offices, easy to scan.
-- **Single page, bilingual via toggle** (`data-lang` spans + localStorage). No `/es/` directory.
-- **Live "Open / Closed" status** in the header, computed client-side from Eastern Time.
-- **Floating "Call now" button** on mobile, always reachable.
-- **No contact form, no testimonials carousel, no FAQ accordion, no service grid.**
-- **Caregiver section** speaks directly to adult children — the people often doing the research.
+From this directory:
 
-## Visual
-
-- Warm cream background (`#fbf8f3`), navy ink, ochre accents.
-- Serif headings (system serif stack — `ui-serif, Georgia, …`), sans body.
-- 19px base font, 1.6 line-height; bumped up for the audience.
-- No web fonts, no vendor libraries, no build step.
-
-## Stack
-
-Plain HTML, CSS, and a single inline `<script>`. Hosted on GitHub Pages.
-
-## Structure
-
-```
-/                           Single-page bilingual homepage
-/privacy/                   Privacy policy
-/integrations/              OAuth integration contact (noindex)
-/oauth/callback/            Patient Fusion OAuth callback
-/.well-known/jwks.json      Public keys
-/pdfs/                      New-patient forms
-/pictures/                  Office photos (not yet surfaced — reserved for a future "see our offices" block)
-/assets/styles.css
-/assets/img/
-CNAME, robots.txt, sitemap.xml
+```sh
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-## Local preview
+Open http://127.0.0.1:8000/. Relative paths also support a GitHub Pages project URL.
 
-```bash
-python -m http.server 8000
-# http://localhost:8000
-```
+## This version
 
-## Branches in this repo
+- A split homepage hero with the existing office photograph and a prominent appointment phone link.
+- Direct navigation to services, providers, locations, and new-patient information.
+- Six providers, including **Giovana de Souza, ARNP**, with the supplied portrait.
+- Sebastian and Vero Beach only, as confirmed for this version.
+- Address-specific directions, patient-portal links, and the existing PDF resources.
+- Restored service descriptions, telehealth, and weekend answering-service information.
+- English/Spanish homepage switching, including navigation labels, image description, and page title.
+- A phone-friendly layout with a persistent call button and room beneath the footer.
+- Standard office hours with a holiday caveat, replacing the approximate open/closed badge.
+- Conservative insurance and caregiver copy without the previous blanket coverage or portal-access promises.
 
-- `main` — snapshot of the live site (template, untouched).
-- `site-rewrite` — first cleanup pass: same structure as live, hand-written CSS, fixes for dead links / SEO / accessibility.
-- `site-reimagine` — this branch. Designed from the ground up; not constrained to the template's structure.
+Giovana's original supplied photo is preserved as `assets/img/doctors/giovana-de-souza.png`.
+CSS frames the portrait without displaying the source image's black bars; the person and source photo are unaltered.
+No unverified specialty, biography, language, or new-patient availability has been added for her.
 
-## TODO before this could go live
+## Files
 
-- [ ] **Fort Pierce address** — currently a placeholder. Confirm and fill in.
-- [ ] **Doctor photos** — confirm none of the existing five are template stock.
-- [ ] **Insurance list** — verify it's current.
-- [ ] **Spanish copy** — have a native speaker review the translation pass.
-- [ ] **Open/closed status logic** — DST math is approximate; consider replacing with `Intl.DateTimeFormat` time-zone formatting if browser support allows.
-- [ ] **Doctor bios** — currently placeholder copy; replace with real ones.
-- [ ] **Caregiver-portal access** — claim is on the page; confirm the practice actually does this.
-- [ ] **Provider "Accepting new patients" tags** — confirm with each provider.
+- `index.html`: bilingual homepage and two-location structured data.
+- `assets/styles.css`: shared responsive styling, including supporting document pages.
+- `assets/site.js`: language preference and copyright year. Storage failures do not break the toggle.
+- `privacy/`, `integrations/`, `oauth/`, and `.well-known/`: existing supporting routes.
+- `pdfs/`: existing patient forms and handouts.
+
+The privacy page remains in English, and its Spanish navigation label explicitly says so.
+English content and all primary links remain usable without JavaScript.
+
+## Verification
+
+- JavaScript syntax and Git whitespace checks.
+- Relative links and assets resolve; homepage anchor destinations exist.
+- Structured data parses and contains the two listed offices.
+- Six provider cards and all portrait images load.
+- Desktop and phone visual review, including Giovana's portrait.
+- Spanish layouts at 320, 390, 768, 1024, and 1280 CSS pixels show no horizontal overflow.
+- English/Spanish switching and reload persistence work; no browser console errors observed.
+
+Before changing the production site, the practice should confirm its existing office hours,
+plan participation, and provider roster. This branch does not change the live domain or deployment settings.
