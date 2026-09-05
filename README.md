@@ -14,11 +14,16 @@ Rewrite of tuyamedical.com, designed from scratch rather than restyled from the 
 - **Open/closed status** now uses `Intl.DateTimeFormat` with `America/New_York`; no hand-rolled DST math.
 - **Language** picks `?lang=es` / `#es` first, then the saved choice, then the browser language. `localStorage` access is guarded.
 - **Images**: provider photos resized to 400×400 (~25 KB each instead of up to 1 MB), header uses a 152 px logo, unreferenced hero backup deleted. Provider images carry width/height and lazy-load.
+- **Real office photos, web-sized.** The hero shows the Vero Beach waiting room with the Sebastian sign inset; each location card has its building; a "Step inside" strip shows four interiors. All cut from `pictures/` at 800–1400 px, 60–220 KB each (the live site shipped the same photos at 4–6 MB apiece).
+- **Locations are photo cards** with a call button and a Google Maps "Get directions" link per office. The My Maps embed is gone: it was a third-party iframe and it shows a third pin south of Vero Beach that the site copy does not claim.
+- **Section nav** in the header on wide screens (Services · Locations · Providers · New patients); hidden under 980 px where the floating call button does the work.
+- **Open Graph card** is a 1200×630 crop of the waiting room (`assets/img/og.jpg`).
+- Stylesheet is linked with a `?v=` query; bump it when you change CSS so GitHub Pages caches don't serve stale styles.
 
 ## Design intent
 
 - **Audience first**: 65+ patients on phones with weak vision and arthritic fingers; adult children doing first-time research on desktop.
-- **Phone is the hero**, not a stock photo. One huge, tappable number.
+- **Phone is the hero**, next to a real photo of the waiting room. One huge, tappable number.
 - **Decision panel** ("What brings you here?") replaces a generic marketing hero.
 - **Locations as a table**, not three identical cards — three offices, easy to scan.
 - **Single page, bilingual via toggle** (`data-lang` spans + localStorage). No `/es/` directory. `?lang=es` links straight to Spanish.
@@ -47,7 +52,7 @@ Plain HTML, CSS, and a single inline `<script>`. Hosted on GitHub Pages.
 /oauth/callback/            Patient Fusion OAuth callback
 /.well-known/jwks.json      Public keys
 /pdfs/                      New-patient forms
-/pictures/                  Office photos (not yet surfaced — reserved for a future "see our offices" block)
+/pictures/                  Original office photos (source for assets/img/office/)
 /assets/styles.css
 /assets/img/
 CNAME, robots.txt, sitemap.xml
@@ -69,7 +74,7 @@ python -m http.server 8000
 
 ## TODO before this could go live
 
-- [ ] **Giovana de Souza photo** — add `assets/img/doctors/doctors-6.jpg` (square) and swap the initials avatar.
+- [ ] **Third map pin** — the practice's Google My Maps has a pin south of Vero Beach (Fort Pierce area). If that is a real office, add it back as a third location card; if not, delete the pin from the map.
 - [ ] **Provider languages** — confirm which providers see patients in Spanish; only Dr. Mendez is tagged today.
 - [ ] **Insurance list** — verify it's current.
 - [ ] **Spanish copy** — have a native speaker review the translation pass.

@@ -10,20 +10,23 @@
 
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=2">
 
   <meta property="og:title" content="TUYA PA — Geriatric & Primary Care">
   <meta property="og:description" content="Independent geriatric and primary-care practice in Sebastian and Vero Beach, Florida. When you call, we answer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.tuyamedical.com/">
-  <meta property="og:image" content="https://www.tuyamedical.com/assets/img/hero-bg.jpg">
+  <meta property="og:image" content="https://www.tuyamedical.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "TUYA PA",
-    "image": "https://www.tuyamedical.com/assets/img/logo.png",
+    "image": "https://www.tuyamedical.com/assets/img/og.jpg",
+    "logo": "https://www.tuyamedical.com/assets/img/logo.png",
     "url": "https://www.tuyamedical.com/",
     "telephone": "+1-772-589-0300",
     "medicalSpecialty": ["Geriatric", "PrimaryCare"],
@@ -53,6 +56,13 @@
       <span>TUYA&nbsp;PA</span>
     </a>
 
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#services"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+      <a href="#locations"><span data-lang="en">Locations</span><span data-lang="es">Ubicaciones</span></a>
+      <a href="#providers"><span data-lang="en">Providers</span><span data-lang="es">Proveedores</span></a>
+      <a href="#new-patients"><span data-lang="en">New patients</span><span data-lang="es">Pacientes nuevos</span></a>
+    </nav>
+
     <span class="status" id="status" aria-live="polite">
       <span class="dot"></span>
       <span class="status-text">
@@ -78,7 +88,8 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="container">
+    <div class="container hero-grid">
+      <div class="hero-copy">
       <div class="eyebrow">
         <span data-lang="en">Treasure Coast · Independent practice since 2008</span>
         <span data-lang="es">Treasure Coast · Práctica independiente desde 2008</span>
@@ -105,6 +116,22 @@
           <span data-lang="es">Lunes a viernes, 8 AM – 5 PM</span>
         </span>
       </a>
+      </div>
+
+      <figure class="hero-visual">
+        <img class="hero-main"
+             src="assets/img/office/vero-waiting-1400.jpg"
+             srcset="assets/img/office/vero-waiting-800.jpg 800w, assets/img/office/vero-waiting-1400.jpg 1400w"
+             sizes="(max-width: 900px) 100vw, 46vw"
+             width="1400" height="1050" fetchpriority="high"
+             alt="The Vero Beach waiting room: teal armchairs, a round chandelier, and tall bright windows">
+        <img class="hero-inset" src="assets/img/office/sebastian-sign-600.jpg" width="600" height="600" loading="lazy"
+             alt="The TUYA sign outside the Sebastian office">
+        <figcaption>
+          <span data-lang="en">Our Vero Beach office, and the sign outside Sebastian.</span>
+          <span data-lang="es">Nuestra oficina de Vero Beach, y el letrero de Sebastian.</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -297,27 +324,61 @@
         </p>
       </div>
 
-      <div class="locations">
-        <div class="loc-row">
-          <h3>Sebastian</h3>
-          <p class="addr">13230 US Highway 1<br>Sebastian, FL 32958</p>
-          <p class="hrs"><span data-lang="en">Mon – Fri · 8 AM – 5 PM</span><span data-lang="es">Lun – Vie · 8 AM – 5 PM</span></p>
-          <p class="tel"><a href="tel:+17725890300">(772) 589-0300</a></p>
-        </div>
-        <div class="loc-row">
-          <h3>Vero Beach</h3>
-          <p class="addr">752 S US Highway 1<br>Vero Beach, FL 32962</p>
-          <p class="hrs"><span data-lang="en">Mon – Fri · 8 AM – 5 PM</span><span data-lang="es">Lun – Vie · 8 AM – 5 PM</span></p>
-          <p class="tel"><a href="tel:+17725890300">(772) 589-0300</a></p>
-        </div>
+      <div class="loc-cards">
+        <article class="loc-card">
+          <img src="assets/img/office/sebastian-outside-1200.jpg" width="1200" height="750" loading="lazy"
+               alt="The Sebastian office: a white building with blue shutters and the entrance sign">
+          <div class="loc-body">
+            <h3>Sebastian</h3>
+            <p class="addr">13230 US Highway 1<br>Sebastian, FL 32958</p>
+            <p class="hrs"><span data-lang="en">Mon – Fri · 8 AM – 5 PM</span><span data-lang="es">Lun – Vie · 8 AM – 5 PM</span></p>
+            <div class="loc-actions">
+              <a class="btn" href="tel:+17725890300">(772) 589-0300</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=13230+US+Highway+1%2C+Sebastian%2C+FL+32958" target="_blank" rel="noopener">
+                <span data-lang="en">Get directions →</span><span data-lang="es">Cómo llegar →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="loc-card">
+          <img src="assets/img/office/vero-outside-1200.jpg" width="1200" height="750" loading="lazy"
+               alt="The Vero Beach office entrance, with arched windows and tropical plants">
+          <div class="loc-body">
+            <h3>Vero Beach</h3>
+            <p class="addr">752 S US Highway 1<br>Vero Beach, FL 32962</p>
+            <p class="hrs"><span data-lang="en">Mon – Fri · 8 AM – 5 PM</span><span data-lang="es">Lun – Vie · 8 AM – 5 PM</span></p>
+            <div class="loc-actions">
+              <a class="btn" href="tel:+17725890300">(772) 589-0300</a>
+              <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=752+S+US+Highway+1%2C+Vero+Beach%2C+FL+32962" target="_blank" rel="noopener">
+                <span data-lang="en">Get directions →</span><span data-lang="es">Cómo llegar →</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
 
-      <div class="map-frame">
-        <iframe
-          title="Map of TUYA PA office locations"
-          src="https://www.google.com/maps/d/embed?mid=1SFVXX0OY2LEwzDN4YoR7fLPqunmp148&ehbc=2E312F"
-          loading="lazy"
-          allowfullscreen></iframe>
+      <div class="inside">
+        <h4 data-lang="en" class="block">Step inside</h4>
+        <h4 data-lang="es" class="block">Conozca nuestras oficinas</h4>
+        <div class="gallery">
+          <figure>
+            <img src="assets/img/office/vero-lounge-900.jpg" width="900" height="675" loading="lazy" alt="Vero Beach waiting area with armchairs, a lamp, and magazines">
+            <figcaption><span data-lang="en">Vero Beach · waiting area</span><span data-lang="es">Vero Beach · sala de espera</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/office/sebastian-front-900.jpg" width="900" height="675" loading="lazy" alt="Sebastian front hallway leading to the waiting room">
+            <figcaption><span data-lang="en">Sebastian · front hall</span><span data-lang="es">Sebastian · entrada</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/office/vero-back-900.jpg" width="900" height="675" loading="lazy" alt="Vero Beach lounge with teal chairs under a chandelier">
+            <figcaption><span data-lang="en">Vero Beach · lounge</span><span data-lang="es">Vero Beach · salón</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/office/sebastian-hall-900.jpg" width="900" height="675" loading="lazy" alt="Sebastian hallway with framed coastal prints">
+            <figcaption><span data-lang="en">Sebastian · hallway</span><span data-lang="es">Sebastian · pasillo</span></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -386,7 +447,7 @@
         </article>
 
         <article class="provider">
-          <div class="photo initials" aria-hidden="true">GS</div>
+          <div class="photo"><img src="assets/img/doctors/doctors-6.jpg" width="400" height="400" loading="lazy" alt="Giovana de Souza"></div>
           <div>
             <h3>Giovana de Souza</h3>
             <div class="role">
