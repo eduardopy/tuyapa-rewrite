@@ -1,4 +1,4 @@
-/* TUYA PA — site-reimagine
+/* TUYA PA — fable-reimagined (builds on site-reimagine)
    Editorial, audience-first, calm. Larger type for older eyes. */
 
 :root {
@@ -328,6 +328,12 @@ section.band.dark a { color: var(--accent-soft); }
   box-shadow: var(--shadow);
 }
 .provider .photo img { width: 100%; height: 100%; object-fit: cover; }
+.provider .photo.initials {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 2.6rem; font-weight: 500;
+  color: var(--brand); background: var(--brand-soft);
+  letter-spacing: .04em; user-select: none;
+}
 .provider h3 {
   font-family: var(--serif); font-weight: 500; font-size: 1.4rem;
   margin: 0;
@@ -393,6 +399,50 @@ section.band.dark a { color: var(--accent-soft); }
   font-family: var(--serif); font-style: italic; font-weight: 500;
   font-size: 1.5rem; margin-bottom: .75rem;
 }
+
+/* ---------- Services ---------- */
+.services {
+  margin: 0; display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.service {
+  padding: 1.5rem 1.5rem 1.5rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+}
+.service dt {
+  font-family: var(--serif); font-size: 1.35rem; font-weight: 500;
+  margin-bottom: .4rem; color: var(--ink);
+}
+.service dd { margin: 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
+
+/* ---------- Patient quotes ---------- */
+.quotes {
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+}
+.quote {
+  margin: 0; padding: 1.5rem 1.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex; flex-direction: column;
+}
+.quote::before {
+  content: "“";
+  display: block;
+  font-family: var(--serif); font-size: 3rem; line-height: .6;
+  height: 1.4rem;
+  color: var(--accent);
+}
+.quote p {
+  position: relative; margin: 0 0 1rem; flex: 1;
+  font-family: var(--serif); font-size: 1.1rem; line-height: 1.6;
+  color: var(--ink);
+}
+.quote footer { color: var(--ink-soft); font-size: .92rem; font-weight: 500; }
 
 /* ---------- Two-column block ---------- */
 .split {
